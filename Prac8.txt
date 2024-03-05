@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="helloWorldApp">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div ng-controller="HelloController">
+    <h1>{{ greeting }}</h1>
+
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" ng-model="name" placeholder="Your Name">
+    <p>Hello, {{ name }}!</p>
+  </div>
+
+  <script>
+    // Create AngularJS module
+    var app = angular.module('helloWorldApp', []);
+
+    // Create AngularJS controller
+    app.controller('HelloController', function ($scope) {
+      // Initialize the greeting
+      $scope.greeting = 'Hello World!';
+    });
+  </script>
+
+</body>
+
+</html>
