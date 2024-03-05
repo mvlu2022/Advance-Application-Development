@@ -1,0 +1,37 @@
+Create an empty folder name "node_Expr_Ang"
+
+then npm install express
+
+Create a file named server.js and add the following code to create a basic Express server.
+
+const express = require('express');
+const app = express();
+const port = 3000;
+app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.send('Hello from Express!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+
+Create a folder named "public" in your project and inside it, create an index.html file. Then, include AngularJS in the index.html
+
+C:\Users\91845\Documents\node_Expr_Ang>ng new public
+
+This will create public folder in node_Expr_Ang folder. After that add new index.html page inside public folder and write
+<p>Hello Angular App using Express</p>
+
+Then after run the following command
+
+C:\Users\91845\Documents\node_Expr_Ang> node server.js
+will see our adress where to run. Copy and paste in the browser
+Out put : 
+Hello Angular App using Express
+
+Means express server to angular app calling 
+
+

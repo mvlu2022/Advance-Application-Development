@@ -1,0 +1,22 @@
+(Date of Practical: 2-Jan-24)
+show databases
+use abhishek
+db.createCollection('Abhi')
+db.abhishek.insert({'Name':'Abhishek','lang':'Java'})
+db.abhishek.find()
+db.abhishek.insertMany([{'Name':'Abhishek','lang':'Java'},
+                        {'Name':'Umang','lang':'Python'},
+                        {'Age':'21'},
+                        {'AgeUma':'15'}])
+db.abhishek.findOne({'Name':'Umang'})
+db.abhishek.find().pretty()
+db.abhishek.find().pretty().limit(1)
+db.abhishek.find().count()
+db.abhishek.find().sort({'Name':-1})
+db.abhishek.updateOne({'Name':'Umang'},{$set:{'lang':'Android'}})
+db.abhishek.findOne({'Name':'Umang'})
+db.abhishek.updateMany({'lang':'Java'},{$set:{'lang':'Kotlin'}})
+db.abhishek.find()
+db.abhishek.replaceOne({'Name':'Abhishek'},{'Name':'AbhishekG'})
+db.abhishek.findOne({'Name':'AbhishekG'})
+db.abhishek.deleteOne({'Name':'AbhishekG'})

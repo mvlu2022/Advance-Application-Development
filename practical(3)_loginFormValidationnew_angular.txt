@@ -1,0 +1,78 @@
+Practical 3
+Form validation
+
+app.module.ts
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { FormsModule,NgForm } from '@angular/forms';
+// @NgModule decorator with its metadata
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule,FormsModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+**************************************************
+app.component.html
+
+<div class="row">
+  <div class="col-xs-12">
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+         type="text"
+        class="form-control"
+        ngModel
+        name="email"
+        required
+        email
+        />
+      </div><br>
+      <div class="form-group">
+        <label for="password">password</label>
+        <input type="password" class="form-control" ngModel name="password" required minlength="6">
+      </div><br>
+      <div>
+      <button type="submit" [disabled]="!authForm.valid">
+        {{isLoginMode ? 'Login' : 'Sign up'}}
+      </button>|
+      <button type="button" (click)="onSwitchMode()">Switch to{{isLoginMode ? 'Sign up' : 'login'}}</button>
+      </div>
+    </form>
+  </div>
+</div>
+*********************************************************
+
+app.component.ts
+
+import { Component,NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { NgForm,FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule, RouterOutlet,FormsModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+
+export class AppComponent {
+  isLoginMode = true;
+
+  onSwitchMode(){
+    this.isLoginMode = !this.isLoginMode;
+  }
+  onSubmit(form:NgForm){
+    console.log(form.value);
+    form.reset();
+
+  }
+}
+

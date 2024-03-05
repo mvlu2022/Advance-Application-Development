@@ -1,0 +1,69 @@
+https://www.tutorialspoint.com/online_angularjs_editor.php
+Run the code on above editor on angular
+
+Code for controller and Module 
+
+practical 4
+
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body ng-controller="LoginController as loginCtrl">
+  <h1>Login</h1>
+  <form name="loginForm" ng-submit="loginCtrl.submitForm()" novalidate>
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" ng-model="loginCtrl.user.username" required>
+      <span class="error" ng-show="loginForm.username.$dirty && loginForm.username.$error.required">Username is required.</span>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" ng-model="loginCtrl.user.password" required>
+      <span class="error" ng-show="loginForm.password.$dirty && loginForm.password.$error.required">Password is required.</span>
+    </div>
+    <div>
+      <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+    </div>
+  </form>
+
+  <div ng-if="loginCtrl.loggedIn">
+    <p>Welcome, {{ loginCtrl.user.username }}!</p>
+    <button ng-click="loginCtrl.logout()">Logout</button>
+  </div>
+
+  <script>
+    angular.module('loginApp', [])
+      .controller('LoginController', function() {
+        this.user = {
+          username: '',
+          password: ''
+        };
+        this.loggedIn = false;
+
+        this.submitForm = function() {
+          // Simulate authentication (can be replaced with actual authentication logic)
+          if (this.user.username === 'user' && this.user.password === 'password') {
+            this.loggedIn = true;
+          } else {
+            alert('Invalid username or password.');
+          }
+        };
+
+        this.logout = function() {
+          this.loggedIn = false;
+          this.user.username = '';
+          this.user.password = '';
+        };
+      });
+  </script>
+</body>
+</html>
