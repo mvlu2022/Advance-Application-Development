@@ -1,3 +1,5 @@
+//Create a simple HTML “Hello World” Project using AngularJS Framework and apply ng-controller, ng-model and expressions 
+
 <!DOCTYPE html>
 <html ng-app="helloWorldApp">
 
