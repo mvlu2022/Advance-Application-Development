@@ -1,3 +1,4 @@
+//Write a program to implement MongoDB data models 
 (Date of Practical: 2-Jan-24)
 show databases
 use abhishek
