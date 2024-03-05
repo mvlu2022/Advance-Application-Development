@@ -1,3 +1,5 @@
+//Write a program to create a simple web application using Express, Node JS and Angular 
+JS .
 Create an empty folder name "node_Expr_Ang"
 
 then npm install express
