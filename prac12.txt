@@ -1,0 +1,126 @@
+AIM: Create an app using Flutter to demonstrate navigation in an App
+
+ctrl+shift+P =>for new project 
+it will ask for folder. We have to create and select new flutter folder.
+next select "application" from multiple options and then give application name "firstapp"
+
+on lib folder , there is main.dart page 
+
+leave all the code from class myhomepage after myClass App.
+import 'package:firstapp/imgdisp.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const ImgDisp(),
+    );
+  }
+}
+
+add new page name "ImgDisp.dart" in lib folder
+
+type stf as short key. choose stateful widget.
+it will generate class name "myWidget"
+we have to change it with "ImgDisp" every where in the page.
+then after add "home: const ImgDisp()," on main.dart file to call our class file.
+then start with the coding part.
+
+
+import 'package:flutter/material.dart';
+
+class ImgDisp extends StatefulWidget {
+  const ImgDisp({super.key});
+
+  @override
+  State<ImgDisp> createState() => _ImgDispState();
+}
+
+class _ImgDispState extends State<ImgDisp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.amber,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 250,
+                width: 200,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/eagle.jpg"),
+                        fit: BoxFit.fill)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("eagle image"),
+              Container(
+                height: 250,
+                width: 200,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/sparrow.jpg"),
+                        fit: BoxFit.fill)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("eagle image"),
+              Container(
+                height: 250,
+                width: 200,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/sparrow.jpg"),
+                        fit: BoxFit.fill)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("eagle image"),
+              Container(
+                height: 250,
+                width: 200,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/sparrow.jpg"),
+                        fit: BoxFit.fill)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("eagle image"),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+right click on the folder "firstapp" -> choose "reveal in file explorere" option. Create folder with name "assets" and paste some images.
+
+In pubspac.yaml : needs to do some setting. assets tag should be uncomment and add folder name in it where we are storing our images.
+
+ assets:
+    - assets/ 

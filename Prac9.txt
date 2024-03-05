@@ -1,0 +1,182 @@
+
+
+Login page (This will be statefull widget)
+
+
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:test10june1/ty1.dart';
+
+class tlogin extends StatefulWidget {
+  const tlogin({super.key});
+
+  @override
+  State<tlogin> createState() => _tloginState();
+}
+
+class _tloginState extends State<tlogin> {
+  final TextEditingController txtName = TextEditingController();
+  final TextEditingController txtpassword = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        // color: Colors.amber,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/loginback.jpg"), fit: BoxFit.fill)),
+        child: Row(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 70, left: 40),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                        height: 40,
+                        width: 250,
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Icon(
+                                Icons.local_dining,
+                                color: Colors.amber,
+                              ),
+                            ),
+                            Text(
+                              "Login Detail",
+                              style:
+                                  TextStyle(fontSize: 25, color: Colors.white),
+                            ),
+                          ],
+                        )),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 0, left: 40),
+                  child: Card(
+                    elevation: 4,
+                    shadowColor: Colors.amber,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 40,
+                        width: 250,
+                        child: TextField(
+                          controller: txtName,
+                          maxLength: 30,
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              // hintText: "Brand",
+                              prefixIcon: Icon(Icons.person),
+                              //suffix: Text("0/30"),
+                              labelText: "Enter User Name",
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              )),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, left: 40, bottom: 20),
+                  child: Card(
+                    elevation: 4,
+                    shadowColor: Colors.amber,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 40,
+                        width: 250,
+                        child: TextField(
+                          controller: txtpassword,
+                          maxLength: 30,
+                          decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              // hintText: "Brand",
+                              prefixIcon: Icon(Icons.password),
+                              //suffix: Text("0/30"),
+                              labelText: "Enter Password",
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              )),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: SizedBox(
+                      height: 40,
+                      width: 150,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          //print(txtName.text);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ty1(
+                                      Fname: txtName.text,
+                                      Lname: txtpassword.text)));
+                        },
+                        child: Text("Login"),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.red),
+                        ),
+                      )),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+After that create next page to Show  data (This will be stateless widget)
+
+import 'package:flutter/material.dart';
+
+class ty1 extends StatelessWidget {
+  final String Fname;
+  final String Lname;
+  const ty1({required this.Fname, required this.Lname});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(child: LayoutBuilder(builder: (context, constraints) {
+        if ("$Fname" == "sneha" && "$Lname" == "12345") {
+          return Text("$Fname  $Lname");
+        } else {
+          return Text("Invalid user");
+        }
+      })
+
+          // Center(
+          //   if($Fname=="sneha" && $Lname="12345")
+          //         child: Text("$Fname  $Lname"),
+          //   else
+          //       print("Login invald");
+          // ),
+          ),
+    );
+  }
+}

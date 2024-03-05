@@ -1,0 +1,193 @@
+
+Main widget LayoutDisp.dart
+import 'package:flutter/material.dart';
+import 'package:head_footer/ColumnLayoutDemo.dart';
+import 'package:head_footer/GridLayoutDemo.dart';
+import 'package:head_footer/RowLayoutDemo.dart';
+
+class LayoutDispextends StatefulWidget {
+  const LayoutDisp({super.key});
+
+  @override
+  State<LayoutDisp> createState() => _LayoutDispState();
+}
+
+class _LayoutDispState extends State<LayoutDisp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Layout Demo'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Row Layout'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RowLayoutDemo(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Column Layout'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ColumnLayoutDemo(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Grid Layout'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GridLayoutDemo(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+ColumnLAyoutDemo.dart
+import 'package:flutter/material.dart';
+
+class ColumnLayoutDemo extends StatefulWidget {
+  const ColumnLayoutDemo({super.key});
+
+  @override
+  State<ColumnLayoutDemo> createState() => _ColumnLayoutDemoState();
+}
+
+class _ColumnLayoutDemoState extends State<ColumnLayoutDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Column Layout Demo'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.blue,
+            width: 100,
+            height: 100,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+GridLAyoutDemo.dart
+
+import 'package:flutter/material.dart';
+
+class GridLayoutDemo extends StatefulWidget {
+  const GridLayoutDemo({super.key});
+
+  @override
+  State<GridLayoutDemo> createState() => _GridLayoutDemoState();
+}
+
+class _GridLayoutDemoState extends State<GridLayoutDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(appBar: AppBar(
+        title: Text('Grid Layout Demo'),
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: [
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.blue,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.yellow,
+            width: 100,
+            height: 100,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+RowLayoutdemo.dart
+
+import 'package:flutter/material.dart';
+
+class RowLayoutDemo extends StatefulWidget {
+  const RowLayoutDemo({super.key});
+
+  @override
+  State<RowLayoutDemo> createState() => _RowLayoutDemoState();
+}
+
+class _RowLayoutDemoState extends State<RowLayoutDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Row Layout Demo'),
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
+          ),
+          Container(
+            color: Colors.blue,
+            width: 100,
+            height: 100,
+          ),
+        ],
+      ),
+    );
+  }
+}
+Prac11.txt
+Displaying Prac11.txt.
