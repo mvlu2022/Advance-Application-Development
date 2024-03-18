@@ -1,7 +1,7 @@
 
-Create an app using Flutter to demonstrate the use of different layouts.
+//Create an app using Flutter to demonstrate the use of different layouts.
 
-Main widget LayoutDisp.dart
+//Main widget LayoutDisp.dart
 import 'package:flutter/material.dart';
 import 'package:head_footer/ColumnLayoutDemo.dart';
 import 'package:head_footer/GridLayoutDemo.dart';
@@ -63,7 +63,7 @@ class _LayoutDispState extends State<LayoutDisp> {
 }
 
 
-ColumnLAyoutDemo.dart
+//ColumnLAyoutDemo.dart
 import 'package:flutter/material.dart';
 
 class ColumnLayoutDemo extends StatefulWidget {
@@ -104,7 +104,7 @@ class _ColumnLayoutDemoState extends State<ColumnLayoutDemo> {
   }
 }
 
-GridLAyoutDemo.dart
+//GridLAyoutDemo.dart
 
 import 'package:flutter/material.dart';
 
@@ -150,7 +150,7 @@ class _GridLayoutDemoState extends State<GridLayoutDemo> {
   }
 }
 
-RowLayoutdemo.dart
+//RowLayoutdemo.dart
 
 import 'package:flutter/material.dart';
 
@@ -191,5 +191,3 @@ class _RowLayoutDemoState extends State<RowLayoutDemo> {
     );
   }
 }
-Prac11.txt
-Displaying Prac11.txt.
