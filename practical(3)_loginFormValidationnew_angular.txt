@@ -1,24 +1,6 @@
 //Write a program to implement MongoDB data models 
 
-Practical 3
-Form validation
-
-app.module.ts
-
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { FormsModule,NgForm } from '@angular/forms';
-// @NgModule decorator with its metadata
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule,FormsModule],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
-**************************************************
+//Practical 3
 app.component.html
 
 <div class="row">
