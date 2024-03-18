@@ -1,12 +1,12 @@
-Create an app using Flutter for User Authentication.
+//Create an app using Flutter for User Authentication.
 
-Login page (This will be statefull widget)
+//Login page (This will be statefull widget)
 
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:test10june1/ty1.dart';
+
 
 class tlogin extends StatefulWidget {
   const tlogin({super.key});
@@ -150,7 +150,7 @@ class _tloginState extends State<tlogin> {
 }
 
 
-After that create next page to Show  data (This will be stateless widget)
+//After that create next page to Show  data (This will be stateless widget)
 
 import 'package:flutter/material.dart';
 
@@ -163,7 +163,7 @@ class ty1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(child: LayoutBuilder(builder: (context, constraints) {
-        if ("$Fname" == "sneha" && "$Lname" == "12345") {
+        if ("$Fname" == "Abhishek" && "$Lname" == "12345") {
           return Text("$Fname  $Lname");
         } else {
           return Text("Invalid user");
@@ -171,7 +171,7 @@ class ty1 extends StatelessWidget {
       })
 
           // Center(
-          //   if($Fname=="sneha" && $Lname="12345")
+          //   if($Fname=="Abhishek" && $Lname="12345")
           //         child: Text("$Fname  $Lname"),
           //   else
           //       print("Login invald");
