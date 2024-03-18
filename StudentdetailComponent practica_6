@@ -1,0 +1,33 @@
+studentdetailComponent html
+
+<ul>
+     <li *ngFor="let item of friendslist">
+          {{ item.name }} {{ item.age }}
+     </li>
+</ul>
+
+studentdetailComponent ts file
+
+import { Component,OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+Component({imports: [FormsModule,CommonModule],})
+
+export class studentdetailComponent  {
+  title = 'angular-project';
+  friendslist = [
+    {
+      name: 'Umang',
+      age: 19
+    },
+   
+    {
+      name: 'Abhishek',
+      age: 21
+    },
+    
+  ]
+
+}
