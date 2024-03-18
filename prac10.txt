@@ -14,7 +14,7 @@
 //then after add "home: const ImgDisp()," on main.dart file to call our class file.
 //then start with the coding part.
 
-
+//ImgDisp.dart
 import 'package:firstapp/TabClk.dart';
 import 'package:flutter/material.dart';
 
@@ -93,6 +93,33 @@ class _ImgDispState extends State<ImgDisp> {
         ),
       ),
     );
+  }
+}
+TabClk.dart
+import 'package:flutter/material.dart';
+
+class TabClk extends StatefulWidget {
+  const TabClk({super.key});
+
+  @override
+  State<TabClk> createState() => _TabClkState();
+}
+
+class _TabClkState extends State<TabClk> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: 
+      Container(
+              height: 2000,
+              width: 1000,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/rose.jpg"),
+                      fit: BoxFit.fill)),
+            ),
+    );
+           
   }
 }
 
